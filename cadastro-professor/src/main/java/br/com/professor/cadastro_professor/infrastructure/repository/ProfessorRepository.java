@@ -13,6 +13,8 @@ public interface ProfessorRepository extends JpaRepository<Professor, Integer> {
     Optional<Professor> findByEmail(String email);
 
     Optional<Professor> findByNome(String nome);
+
     List<Professor> findByDisciplina(String disciplina);
+
     List<Professor> findBySalario(Double salario);
 }
