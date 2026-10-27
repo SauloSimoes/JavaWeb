@@ -65,4 +65,13 @@ public class ProfessorService {
         buscarProfessorPorId(id);
         repository.deleteById(id);
     }
+
+    public void deletarProfessorPorEmail(String email) {
+        buscarProfessorPorEmail(email);
+        repository.deleteByEmail(email);
+    }
+
+    public void deletarProfessoresPorDisciplina(String disciplina) {
+        repository.deleteByDisciplina(disciplina);
+    }
 }

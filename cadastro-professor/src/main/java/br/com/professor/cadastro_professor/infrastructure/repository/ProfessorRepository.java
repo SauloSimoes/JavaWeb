@@ -3,6 +3,7 @@ package br.com.professor.cadastro_professor.infrastructure.repository;
 import br.com.professor.cadastro_professor.infrastructure.entitys.Professor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,4 +18,10 @@ public interface ProfessorRepository extends JpaRepository<Professor, Integer> {
     List<Professor> findByDisciplina(String disciplina);
 
     List<Professor> findBySalario(Double salario);
+
+    @Transactional
+    void deleteByEmail(String email);
+
+    @Transactional
+    void deleteByDisciplina(String disciplina);
 }

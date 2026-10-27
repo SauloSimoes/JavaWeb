@@ -55,4 +55,16 @@ public class ProfessorController {
         professorService.deletarProfessorPorId(id);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/email/{email}")
+    public ResponseEntity<Void> deletarProfessorPorEmail(@PathVariable String email) {
+        professorService.deletarProfessorPorEmail(email);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/disciplina/{disciplina}")
+    public ResponseEntity<Void> deletarProfessoresPorDisciplina(@PathVariable String disciplina) {
+        professorService.deletarProfessoresPorDisciplina(disciplina);
+        return ResponseEntity.noContent().build();
+    }
 }
